@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.mobiquity.weatherapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_city"
+            app:destination="@id/nav_city" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_searchCity"
+            app:destination="@id/nav_searchCity" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_add_city"
+            app:destination="@id/nav_add_city" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_city"
+        android:name="com.mobiquity.weatherapp.ui.home.CityWeatherFragment"
+        android:label="@string/menu_city"
+        tools:layout="@layout/fragment_weather_city" />
+
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.mobiquity.weatherapp.ui.home.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_nav_settings_to_nav_units"
+            app:destination="@id/nav_units" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_add_city"
+        android:name="com.mobiquity.weatherapp.AddCityActivity"
+        tools:layout="@layout/activity_add_city" />
+
+
+    <fragment
+        android:id="@+id/nav_searchCity"
+        android:name="com.mobiquity.weatherapp.ui.home.SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_nav_searchCity_to_nav_city"
+            app:destination="@id/nav_city" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_units"
+        android:name="com.mobiquity.weatherapp.ui.home.UnitsFragment"
+        tools:layout="@layout/fragment_settings_units" >
+        <action
+            android:id="@+id/action_nav_units_to_nav_settings"
+            app:destination="@id/nav_settings" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.mobiquity.weatherapp.ui.home.HelpFragment"
+        android:label="@string/help"
+        tools:layout="@layout/fragment_help" />
+
+
+</navigation>
